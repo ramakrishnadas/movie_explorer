@@ -49,3 +49,9 @@ h1 {
     border: 1px solid var(--accent-color);
     border-radius: 5px;
 }
+
+#movie-container a {
+    text-decoration: none; 
+    color: inherit; 
+}
+
