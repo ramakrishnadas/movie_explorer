@@ -21,8 +21,77 @@ h1, h2, h3 {
     font-family: var(--heading-font);
 }
 
+header {
+    display: flex;
+    background-color: var(--primary-color);
+    border-bottom: 4px solid var(--accent-color);
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+#search-bar {
+    color: var(--secondary-color);
+    margin: 0 auto;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+fieldset {
+    border: 0;
+}
+
+#searchby-radio {
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#search-btn {
+    font-size: 1em;
+    border-radius: 5px;
+    padding: 10px 20px;
+    height: 40px;
+    margin-left: 20px;
+}
+
+#query {
+    width: 300px;
+    margin-left: 20px;
+    font-size: 1.5em;
+}
+
+header img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 150px;
+    height: auto;
+    margin: 0 20px;
+}
 h1 {
     font-size: 3em;
+    margin-left: 20px;
+    align-self: center;
+    color: var(--secondary-color);
+    letter-spacing: 3px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#bookmark-star {
+    margin-right: 0;
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+#bookmark-star img {
+    display: block;
+    width: 100px;
 }
 
 #movie-container {
@@ -37,7 +106,6 @@ h1 {
 }
 
 .movie-card {
-    
     padding: 20px;
     background-color: var(--primary-color);
     border: 1px solid white;
@@ -55,3 +123,163 @@ h1 {
     color: inherit; 
 }
 
+footer {
+    margin: 20px auto;
+}
+
+/* Movie Details page */
+
+#movie-details {
+    margin: 20px 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+#grid-item1 {
+    font-size: 1.2em;
+}
+
+#grid-item2 {
+    width: 80%;
+    text-align: left;
+    align-self: center;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+
+/* Bookmark button styles */
+
+.bookmark-button {
+    position: absolute;
+    top: 30px; 
+    right: 30px; 
+    background-color: var(--secondary-color); 
+    color: var(--primary-color); 
+    border: 1px solid #000; 
+    padding: 20px 40px; 
+    font-size: 1.2em;
+    cursor: pointer; 
+    border-radius: 5px;
+}
+
+/* Styles for bookmarked state */
+.bookmark-button.bookmarked {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+}
+
+.bookmark-button:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+}
+
+/* --------- */
+
+#movie-details iframe {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+    margin: 100px auto 20px auto;
+
+}
+
+#movie-details img {
+    width: 50%;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+}
+
+#movie-details a {
+    text-decoration: none;
+}
+
+#movie-details a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    header {
+        display: block;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    header img {
+        display: inline-block;
+    }
+
+    #search-bar {
+        width: 90%;
+        margin: 20px auto 0px auto;
+        padding-top: 20px;
+        border-top: 1px solid var(--accent-color);
+    }
+
+    #query {
+        width: 400px;
+    }
+
+    #bookmark-star {
+        display: inline-block;
+        margin: 10px auto;
+    }
+    #movie-container {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+        margin: 20px auto;
+        padding: 0;
+    }
+    .movie-card {
+        padding: 0;
+    }
+    .movie-card img {
+        max-width: 700px;
+    }
+
+    #movie-details {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    #grid-item1 {
+        margin-top: 50px;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+
+    #grid-item2 {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        text-align: center;
+        width: 100%;
+        padding: 0;
+        line-height: 1.5em;
+    }
+
+    #movie-details iframe {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        width: 560px;
+        height: 315px;
+        transform: scale(1.2);
+        margin-bottom: 50px;
+    }
+
+    .bookmark-button {
+        top: 10px;
+        right: 10px;
+    }
+}
